@@ -1,9 +1,6 @@
-#...
+# Prints the contents of a text file from
+# the working directory to the console
 def print_file_dir(file)
-	logo = File.open(Dir.getwd + file, 'r');
-	logo.each_line do |line|
-		puts line
-	end
-	logo.close
+	IO.foreach(Dir.getwd + file) { |line| puts line }
 	puts
 end
